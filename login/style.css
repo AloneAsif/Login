@@ -1,0 +1,39 @@
+.main{
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+.internal{
+    background-color: rgb(101, 255, 214);
+    display: grid;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+
+}
+
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+
+}
+
+button{
+    margin-top: 20px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+
+button:hover{
+    background-color: rgba(255, 0, 0, 0.684);
+    cursor: pointer;
+}
+
+
