@@ -60,3 +60,51 @@ function getValue2(){
       console.log(errorMessage)
     });
 }
+
+// Forget password
+
+function forgotPassword(){
+  var Email1 = document.getElementById('Email1');
+
+
+  firebase.auth().sendPasswordResetEmail(Email1.value)
+  .then(() => {
+    alert("Your message for reset password send....")
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage)
+  });
+}
+
+//  Gmail login
+
+function googleLogin(){
+
+  
+
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    console.log(user)
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage)
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
